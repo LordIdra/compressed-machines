@@ -432,8 +432,7 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        // TODO create a bug tracker
-        return null;
+        return "github.com/LordIdra/CompressedMachines/issues";
     }
 
     @Override
