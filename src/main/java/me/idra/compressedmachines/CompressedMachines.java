@@ -38,6 +38,7 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         ItemStack categoryItem = new CustomItem(Material.OBSIDIAN, "Compressed Machines", "", "&aSpace and lag efficient machine variants");
         NamespacedKey categoryId = new NamespacedKey(this, "compressed_machines");
         Category category = new Category(categoryId, categoryItem);
+        String categoryName = "&5Compressed Machine";
         
         
         // Display an arbitrary item to tell the players that they can deconstruct machines in an enhanced crafting table
@@ -62,22 +63,22 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         
         
         // Load the SF items we're going to compress
-        ItemStack auto_drier = SlimefunItems.AUTO_DRIER;
-        ItemStack carbon_press = SlimefunItems.CARBON_PRESS_3;
-        ItemStack dust_washer = SlimefunItems.ELECTRIC_DUST_WASHER_3;
+        ItemStack autoDrier = SlimefunItems.AUTO_DRIER;
+        ItemStack carbonPress = SlimefunItems.CARBON_PRESS_3;
+        ItemStack dustWasher = SlimefunItems.ELECTRIC_DUST_WASHER_3;
         ItemStack furnace = SlimefunItems.ELECTRIC_FURNACE_3;
-        ItemStack gold_pan = SlimefunItems.ELECTRIC_GOLD_PAN_3;
-        ItemStack ingot_factory = SlimefunItems.ELECTRIC_INGOT_FACTORY_3;
-        ItemStack ingot_pulverizer = SlimefunItems.ELECTRIC_INGOT_PULVERIZER;
-        ItemStack ore_grinder = SlimefunItems.ELECTRIC_ORE_GRINDER_2;
+        ItemStack goldPan = SlimefunItems.ELECTRIC_GOLD_PAN_3;
+        ItemStack ingotFactory = SlimefunItems.ELECTRIC_INGOT_FACTORY_3;
+        ItemStack ingotPulverizer = SlimefunItems.ELECTRIC_INGOT_PULVERIZER;
+        ItemStack oreGrinder = SlimefunItems.ELECTRIC_ORE_GRINDER_2;
         ItemStack press = SlimefunItems.ELECTRIC_PRESS_2;
         ItemStack smeltery = SlimefunItems.ELECTRIC_SMELTERY_2;
         ItemStack crucible = SlimefunItems.ELECTRIFIED_CRUCIBLE_3;
-        ItemStack food_composter = SlimefunItems.FOOD_COMPOSTER_2;
-        ItemStack food_fabricator = SlimefunItems.FOOD_FABRICATOR_2;
-        ItemStack geo_miner = SlimefunItems.GEO_MINER;
-        ItemStack heated_pressure_chamber = SlimefunItems.HEATED_PRESSURE_CHAMBER_2;
-        ItemStack oil_pump = SlimefunItems.OIL_PUMP;
+        ItemStack foodComposter = SlimefunItems.FOOD_COMPOSTER_2;
+        ItemStack foodFabricator = SlimefunItems.FOOD_FABRICATOR_2;
+        ItemStack geoMiner = SlimefunItems.GEO_MINER;
+        ItemStack heatedPressureChamber = SlimefunItems.HEATED_PRESSURE_CHAMBER_2;
+        ItemStack oilPump = SlimefunItems.OIL_PUMP;
         ItemStack refinery = SlimefunItems.REFINERY;
 
         
@@ -103,12 +104,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         		"COMPRESSED_AUTO_DRIER_4",
         		Material.SMOKER,
         		"&7&l[&2&l4x&7&l] &r&6Auto Drier",
-        		"", "&5Compressed Machine", LoreBuilder.speed(1), LoreBuilder.powerPerSecond(48));
+        		"", categoryName, LoreBuilder.speed(1), LoreBuilder.powerPerSecond(48));
         SlimefunItemStack itemCompressedAutoDrier8 = new SlimefunItemStack(
         		"COMPRESSED_AUTO_DRIER_8",
         		Material.SMOKER,
         		"&7&l[&2&l8x&7&l] &r&6Auto Drier",
-        		"", "&5Compressed Machine", LoreBuilder.speed(1), LoreBuilder.powerPerSecond(96));
+        		"", categoryName, LoreBuilder.speed(1), LoreBuilder.powerPerSecond(96));
         
         
         /*
@@ -119,12 +120,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         		"COMPRESSED_ELECTRIC_GOLD_PAN_4",
         		Material.BROWN_TERRACOTTA,
         		"&7&l[&2&l4x&7&l] &r&6Electric Gold Pan &7(&eIII&7)",
-        		"", "&5Compressed Machine", LoreBuilder.speed(10), LoreBuilder.powerPerSecond(56));
+        		"", categoryName, LoreBuilder.speed(10), LoreBuilder.powerPerSecond(56));
         SlimefunItemStack itemCompressedGoldPan8 = new SlimefunItemStack(
         		"COMPRESSED_ELECTRIC_GOLD_PAN_8",
         		Material.BROWN_TERRACOTTA,
         		"&7&l[&2&l8x&7&l] &r&6Electric Gold Pan &7(&eIII&7)",
-        		"", "&5Compressed Machine", LoreBuilder.speed(10), LoreBuilder.powerPerSecond(112));
+        		"", categoryName, LoreBuilder.speed(10), LoreBuilder.powerPerSecond(112));
         
         
         /*
@@ -135,12 +136,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         		"COMPRESSED_ELECTRIC_DUST_WASHER_4",
         		Material.BLUE_STAINED_GLASS,
         		"&7&l[&2&l4x&7&l] &r&9Electric Dust Washer &7(&eIII&7)",
-        		"", "&5Compressed Machine", LoreBuilder.speed(10), LoreBuilder.powerPerSecond(120));
+        		"", categoryName, LoreBuilder.speed(10), LoreBuilder.powerPerSecond(120));
         SlimefunItemStack itemCompressedDustWasher8 = new SlimefunItemStack(
         		"COMPRESSED_ELECTRIC_DUST_WASHER_8",
         		Material.BLUE_STAINED_GLASS,
         		"&7&l[&2&l8x&7&l] &r&9Electric Dust Washer &7(&eIII&7)",
-        		"", "&5Compressed Machine", LoreBuilder.speed(10), LoreBuilder.powerPerSecond(240));
+        		"", categoryName, LoreBuilder.speed(10), LoreBuilder.powerPerSecond(240));
         
         
         /*
@@ -151,12 +152,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         		"COMPRESSED_ELECTRIC_SMELTERY_4",
         		Material.FURNACE,
         		"&7&l[&2&l4x&7&l] &r&cElectric Smeltery &7 - &eII",
-        		"", "&4Alloys only, doesn't smelt Dust into Ingots", "", "&5Compressed Machine", LoreBuilder.speed(3), LoreBuilder.powerPerSecond(160));
+        		"", "&4Alloys only, doesn't smelt Dust into Ingots", "", categoryName, LoreBuilder.speed(3), LoreBuilder.powerPerSecond(160));
         SlimefunItemStack itemCompressedSmeltery8 = new SlimefunItemStack(
         		"COMPRESSED_ELECTRIC_SMELTERY_8",
         		Material.FURNACE,
         		"&7&l[&2&l8x&7&l] &r&cElectric Smeltery &7 - &eII",
-        		"", "&4Alloys only, doesn't smelt Dust into Ingots", "", "&5Compressed Machine", LoreBuilder.speed(3), LoreBuilder.powerPerSecond(320));
+        		"", "&4Alloys only, doesn't smelt Dust into Ingots", "", categoryName, LoreBuilder.speed(3), LoreBuilder.powerPerSecond(320));
         
         
         
@@ -177,14 +178,14 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          */
         
         ItemStack[] recipeCompressedAutoDrier4 = { 
-        		auto_drier, auto_drier, null, 
-        		auto_drier, auto_drier, null, 
+        		autoDrier, autoDrier, null, 
+        		autoDrier, autoDrier, null, 
         		null,	  null, 	null 
         };
         ItemStack[] recipeCompressedAutoDrier8 = { 
-        		auto_drier, auto_drier, auto_drier, 
-        		auto_drier, null,	 	auto_drier, 
-        		auto_drier, auto_drier, auto_drier 
+        		autoDrier, autoDrier, autoDrier, 
+        		autoDrier, null,	  autoDrier, 
+        		autoDrier, autoDrier, autoDrier 
         };
         
         
@@ -193,14 +194,14 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          */
         
         ItemStack[] recipeCompressedGoldPan4 = { 
-        		gold_pan, gold_pan, null, 
-        		gold_pan, gold_pan, null, 
+        		goldPan, goldPan, null, 
+        		goldPan, goldPan, null, 
         		null,	  null, 	null 
         };
         ItemStack[] recipeCompressedGoldPan8 = { 
-        		gold_pan, gold_pan, gold_pan, 
-        		gold_pan, null,	 	gold_pan, 
-        		gold_pan, gold_pan, gold_pan 
+        		goldPan, goldPan, goldPan, 
+        		goldPan, null,	 	goldPan, 
+        		goldPan, goldPan, goldPan 
         };
         
         
@@ -209,14 +210,14 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          */
         
         ItemStack[] recipeCompressedDustWasher4 = { 
-        		dust_washer, dust_washer, null, 
-        		dust_washer, dust_washer, null, 
+        		dustWasher, dustWasher, null, 
+        		dustWasher, dustWasher, null, 
         		null,	  null, 	null 
         };
         ItemStack[] recipeCompressedDustWasher8 = { 
-        		dust_washer, dust_washer, dust_washer,
-        		dust_washer, null, 		  dust_washer,
-        		dust_washer, dust_washer, dust_washer
+        		dustWasher, dustWasher, dustWasher,
+        		dustWasher, null, 		  dustWasher,
+        		dustWasher, dustWasher, dustWasher
         };
         
         
@@ -358,17 +359,17 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         
         
         // Add the items to slimefun
-        ((SlimefunItem)compressedAutoDrier4).register(this);
-        ((SlimefunItem)compressedAutoDrier8).register(this);
+        compressedAutoDrier4.register(this);
+        compressedAutoDrier8.register(this);
         
-        ((SlimefunItem)compressedGoldPan4).register(this);
-        ((SlimefunItem)compressedGoldPan8).register(this);
+        compressedGoldPan4.register(this);
+        compressedGoldPan8.register(this);
         
-        ((SlimefunItem)compressedDustWasher4).register(this);
-        ((SlimefunItem)compressedDustWasher8).register(this);
+        compressedDustWasher4.register(this);
+        compressedDustWasher8.register(this);
         
-        ((SlimefunItem)compressedSmeltery4).register(this);
-        ((SlimefunItem)compressedSmeltery8).register(this);
+        compressedSmeltery4.register(this);
+        compressedSmeltery8.register(this);
         
         
         
