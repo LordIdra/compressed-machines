@@ -11,7 +11,7 @@ import other.CompressedAutoDrierBase;
 
 public class CompressedX4AutoDrier extends CompressedAutoDrierBase {
 	
-	protected static final int compression = 4;
+	protected static final int COMPRESSION = 4;
 
     public CompressedX4AutoDrier(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);

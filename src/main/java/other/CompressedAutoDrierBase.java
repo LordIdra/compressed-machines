@@ -18,7 +18,7 @@ import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class CompressedAutoDrierBase extends AContainer implements RecipeDisplayItem {
 	
-	protected static final int compression = 1;
+	protected static final int COMPRESSION = 1;
     private List<ItemStack> recipeList;
 
     public CompressedAutoDrierBase(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -81,9 +81,9 @@ public class CompressedAutoDrierBase extends AContainer implements RecipeDisplay
         }
         
         for (int i = 0; i < recipeList.size(); i++) {
-        	ItemStack new_recipe = new ItemStack(recipeList.get(i));
-        	new_recipe.setAmount(new_recipe.getAmount() * compression);
-        	recipeList.set(i, new_recipe);
+        	ItemStack newRecipe = new ItemStack(recipeList.get(i));
+        	newRecipe.setAmount(newRecipe.getAmount() * COMPRESSION);
+        	recipeList.set(i, newRecipe);
         }
 
         // Now convert them to machine recipes
@@ -108,6 +108,6 @@ public class CompressedAutoDrierBase extends AContainer implements RecipeDisplay
     }
     
     public int getCompression() {
-    	return compression;
+    	return COMPRESSION;
     }
 }
