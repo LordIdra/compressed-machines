@@ -9,12 +9,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
-import io.github.thebusybiscuit.slimefun4.implementation.items.multiblocks.EnhancedCraftingTable;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import misc_items.InformationItem;
 import slimefun_machines.CompressedX4AutoDrier;
@@ -31,7 +31,7 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
     	
         // Read the config file
-        //Config cfg = new Config(this);
+        Config cfg = new Config(this);
 
     	
         // Create a category to put our items into
