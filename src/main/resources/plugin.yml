@@ -1,17 +1,17 @@
 ## CHANGE this to the name of your plugin.
-name: SlimefunAddon
+name: CompressedMachines
 
 ## CHANGE this to your username.
-author: CHANGEME
+author: Idra
 
 ## CHANGE this to a meaninful but short description of your plugin.
-description: A generic Slimefun4-Addon
+description: Adds compact variants of slimefun machines to boost server performance
 
 ## CHANGE this to the path of the class that extends JavaPlugin.
-main: me.CHANGEME.slimefunaddon.ExampleAddon
+main: me.idra.compressedmachines.CompressedMachines
 
 ## You can change this to link to your website or repository. You can also remove this line if you want to.
-website: https://github.com/TheBusyBiscuit/Slimefun4-Addon
+website: https://github.com/Idra/CompressedMachines
 
 ## This is required and marks Slimefun as a plugin dependency.
 depend: [Slimefun]
