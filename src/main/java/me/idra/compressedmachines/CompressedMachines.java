@@ -41,24 +41,24 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         
         
         // Display an arbitrary item to tell the players that they can deconstruct machines in an enhanced crafting table
-        SlimefunItemStack COMPRESSED_INFORMATION_ITEM = new SlimefunItemStack(
-        		"COMPRESSED_INFORMATION_ITEM",
+        SlimefunItemStack compressedInformationItem = new SlimefunItemStack(
+        		"compressedInformationItem",
         		Material.NETHER_STAR,
         		"&4&lINFORMATION",
         		"&aCompressed machines can be converted back into their", "&anormal variants by putting them in the &2&lfirst slot &aof an", "&aenhanced crafting table");
-        ItemStack[] COMPRESSED_INFORMATION_RECIPE = { 
+        ItemStack[] compressedInformationRecipe = { 
         		null, null, null,
         		null, null, null,
         		null, null, null
         };
         
-        InformationItem COMPRESSED_INFORMATION = new InformationItem(
+        InformationItem compressedInformation = new InformationItem(
         		category, 
-        		COMPRESSED_INFORMATION_ITEM,
+        		compressedInformationItem,
         		RecipeType.NULL, 
-        		COMPRESSED_INFORMATION_RECIPE);
+        		compressedInformationRecipe);
         
-        COMPRESSED_INFORMATION.register(this);
+        compressedInformation.register(this);
         
         
         // Load the SF items we're going to compress
@@ -99,12 +99,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          * AUTO DRIERS
          */
         
-        SlimefunItemStack ITEM_X4_COMPRESSED_AUTO_DRIER = new SlimefunItemStack(
+        SlimefunItemStack itemCompressedAutoDrier4 = new SlimefunItemStack(
         		"COMPRESSED_AUTO_DRIER_4",
         		Material.SMOKER,
         		"&7&l[&2&l4x&7&l] &r&6Auto Drier",
         		"", "&5Compressed Machine", LoreBuilder.speed(1), LoreBuilder.powerPerSecond(48));
-        SlimefunItemStack ITEM_X8_COMPRESSED_AUTO_DRIER = new SlimefunItemStack(
+        SlimefunItemStack itemCompressedAutoDrier8 = new SlimefunItemStack(
         		"COMPRESSED_AUTO_DRIER_8",
         		Material.SMOKER,
         		"&7&l[&2&l8x&7&l] &r&6Auto Drier",
@@ -115,12 +115,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          * GOLD PANS
          */
         
-        SlimefunItemStack ITEM_X4_COMPRESSED_GOLD_PAN = new SlimefunItemStack(
+        SlimefunItemStack itemCompressedGoldPan4 = new SlimefunItemStack(
         		"COMPRESSED_ELECTRIC_GOLD_PAN_4",
         		Material.BROWN_TERRACOTTA,
         		"&7&l[&2&l4x&7&l] &r&6Electric Gold Pan &7(&eIII&7)",
         		"", "&5Compressed Machine", LoreBuilder.speed(10), LoreBuilder.powerPerSecond(56));
-        SlimefunItemStack ITEM_X8_COMPRESSED_GOLD_PAN = new SlimefunItemStack(
+        SlimefunItemStack itemCompressedGoldPan8 = new SlimefunItemStack(
         		"COMPRESSED_ELECTRIC_GOLD_PAN_8",
         		Material.BROWN_TERRACOTTA,
         		"&7&l[&2&l8x&7&l] &r&6Electric Gold Pan &7(&eIII&7)",
@@ -131,12 +131,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          * DUST WASHERS
          */
         
-        SlimefunItemStack ITEM_X4_COMPRESSED_DUST_WASHER = new SlimefunItemStack(
+        SlimefunItemStack itemCompressedDustWasher4 = new SlimefunItemStack(
         		"COMPRESSED_ELECTRIC_DUST_WASHER_4",
         		Material.BLUE_STAINED_GLASS,
         		"&7&l[&2&l4x&7&l] &r&9Electric Dust Washer &7(&eIII&7)",
         		"", "&5Compressed Machine", LoreBuilder.speed(10), LoreBuilder.powerPerSecond(120));
-        SlimefunItemStack ITEM_X8_COMPRESSED_DUST_WASHER = new SlimefunItemStack(
+        SlimefunItemStack itemCompressedDustWasher8 = new SlimefunItemStack(
         		"COMPRESSED_ELECTRIC_DUST_WASHER_8",
         		Material.BLUE_STAINED_GLASS,
         		"&7&l[&2&l8x&7&l] &r&9Electric Dust Washer &7(&eIII&7)",
@@ -147,12 +147,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          * SMELTERIES
          */
         
-        SlimefunItemStack ITEM_X4_COMPRESSED_SMELTERY = new SlimefunItemStack(
+        SlimefunItemStack itemCompressedSmeltery4 = new SlimefunItemStack(
         		"COMPRESSED_ELECTRIC_SMELTERY_4",
         		Material.FURNACE,
         		"&7&l[&2&l4x&7&l] &r&cElectric Smeltery &7 - &eII",
         		"", "&4Alloys only, doesn't smelt Dust into Ingots", "", "&5Compressed Machine", LoreBuilder.speed(3), LoreBuilder.powerPerSecond(160));
-        SlimefunItemStack ITEM_X8_COMPRESSED_SMELTERY = new SlimefunItemStack(
+        SlimefunItemStack itemCompressedSmeltery8 = new SlimefunItemStack(
         		"COMPRESSED_ELECTRIC_SMELTERY_8",
         		Material.FURNACE,
         		"&7&l[&2&l8x&7&l] &r&cElectric Smeltery &7 - &eII",
@@ -176,12 +176,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          * AUTO DRIER
          */
         
-        ItemStack[] RECIPE_X4_COMPRESSED_AUTO_DRIER = { 
+        ItemStack[] recipeCompressedAutoDrier4 = { 
         		auto_drier, auto_drier, null, 
         		auto_drier, auto_drier, null, 
         		null,	  null, 	null 
         };
-        ItemStack[] RECIPE_X8_COMPRESSED_AUTO_DRIER = { 
+        ItemStack[] recipeCompressedAutoDrier8 = { 
         		auto_drier, auto_drier, auto_drier, 
         		auto_drier, null,	 	auto_drier, 
         		auto_drier, auto_drier, auto_drier 
@@ -192,12 +192,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          * GOLD PANS
          */
         
-        ItemStack[] RECIPE_X4_COMPRESSED_GOLD_PAN = { 
+        ItemStack[] recipeCompressedGoldPan4 = { 
         		gold_pan, gold_pan, null, 
         		gold_pan, gold_pan, null, 
         		null,	  null, 	null 
         };
-        ItemStack[] RECIPE_X8_COMPRESSED_GOLD_PAN = { 
+        ItemStack[] recipeCompressedGoldPan8 = { 
         		gold_pan, gold_pan, gold_pan, 
         		gold_pan, null,	 	gold_pan, 
         		gold_pan, gold_pan, gold_pan 
@@ -208,12 +208,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          * DUST WASHERS
          */
         
-        ItemStack[] RECIPE_X4_COMPRESSED_DUST_WASHER = { 
+        ItemStack[] recipeCompressedDustWasher4 = { 
         		dust_washer, dust_washer, null, 
         		dust_washer, dust_washer, null, 
         		null,	  null, 	null 
         };
-        ItemStack[] RECIPE_X8_COMPRESSED_DUST_WASHER = { 
+        ItemStack[] recipeCompressedDustWasher8 = { 
         		dust_washer, dust_washer, dust_washer,
         		dust_washer, null, 		  dust_washer,
         		dust_washer, dust_washer, dust_washer
@@ -224,12 +224,12 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          * SMELTERIES
          */
         
-        ItemStack[] RECIPE_X4_COMPRESSED_SMELTERY = { 
+        ItemStack[] recipeCompressedSmeltery4 = { 
         		smeltery, smeltery, null, 
         		smeltery, smeltery, null, 
         		null,	  null, 	null 
         };
-        ItemStack[] RECIPE_X8_COMPRESSED_SMELTERY = { 
+        ItemStack[] recipeCompressedSmeltery8 = { 
         		smeltery, smeltery, smeltery,
         		smeltery, null, 	smeltery,
         		smeltery, smeltery, smeltery
@@ -254,121 +254,121 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          * AUTO DRIERS
          */
         
-        CompressedX4AutoDrier X4_COMPRESSED_AUTO_DRIER = new CompressedX4AutoDrier(
+        CompressedX4AutoDrier compressedAutoDrier4 = new CompressedX4AutoDrier(
         		category, 
-        		ITEM_X4_COMPRESSED_AUTO_DRIER, 
+        		itemCompressedAutoDrier4, 
         		RecipeType.ENHANCED_CRAFTING_TABLE, 
-        		RECIPE_X4_COMPRESSED_AUTO_DRIER);
+        		recipeCompressedAutoDrier4);
         
-        CompressedX8AutoDrier X8_COMPRESSED_AUTO_DRIER = new CompressedX8AutoDrier(
+        CompressedX8AutoDrier compressedAutoDrier8 = new CompressedX8AutoDrier(
         		category, 
-        		ITEM_X8_COMPRESSED_AUTO_DRIER, 
+        		itemCompressedAutoDrier8, 
         		RecipeType.ENHANCED_CRAFTING_TABLE, 
-        		RECIPE_X8_COMPRESSED_AUTO_DRIER);
+        		recipeCompressedAutoDrier8);
         
-        X4_COMPRESSED_AUTO_DRIER.setCapacity(500);
-        X4_COMPRESSED_AUTO_DRIER.setEnergyConsumption(48);
-        X4_COMPRESSED_AUTO_DRIER.setProcessingSpeed(1);
+        compressedAutoDrier4.setCapacity(500);
+        compressedAutoDrier4.setEnergyConsumption(48);
+        compressedAutoDrier4.setProcessingSpeed(1);
         
-        X8_COMPRESSED_AUTO_DRIER.setCapacity(1000);
-        X8_COMPRESSED_AUTO_DRIER.setEnergyConsumption(96);
-        X8_COMPRESSED_AUTO_DRIER.setProcessingSpeed(1);
+        compressedAutoDrier8.setCapacity(1000);
+        compressedAutoDrier8.setEnergyConsumption(96);
+        compressedAutoDrier8.setProcessingSpeed(1);
         
         
         /*
          * GOLD PANS
          */
         
-        CompressedElectricGoldPan X4_COMPRESSED_GOLD_PAN = new CompressedElectricGoldPan(
+        CompressedElectricGoldPan compressedGoldPan4 = new CompressedElectricGoldPan(
         		category, 
-        		ITEM_X4_COMPRESSED_GOLD_PAN, 
+        		itemCompressedGoldPan4, 
         		RecipeType.ENHANCED_CRAFTING_TABLE, 
-        		RECIPE_X4_COMPRESSED_GOLD_PAN, 
+        		recipeCompressedGoldPan4, 
         		4);
         
-        CompressedElectricGoldPan X8_COMPRESSED_GOLD_PAN = new CompressedElectricGoldPan(
+        CompressedElectricGoldPan compressedGoldPan8 = new CompressedElectricGoldPan(
         		category, 
-        		ITEM_X8_COMPRESSED_GOLD_PAN, 
+        		itemCompressedGoldPan8, 
         		RecipeType.ENHANCED_CRAFTING_TABLE, 
-        		RECIPE_X8_COMPRESSED_GOLD_PAN, 
+        		recipeCompressedGoldPan8, 
         		8);
         
-        X4_COMPRESSED_GOLD_PAN.setCapacity(500);
-        X4_COMPRESSED_GOLD_PAN.setEnergyConsumption(56);
-        X4_COMPRESSED_GOLD_PAN.setProcessingSpeed(10);
+        compressedGoldPan4.setCapacity(500);
+        compressedGoldPan4.setEnergyConsumption(56);
+        compressedGoldPan4.setProcessingSpeed(10);
         
-        X8_COMPRESSED_GOLD_PAN.setCapacity(1000);
-        X8_COMPRESSED_GOLD_PAN.setEnergyConsumption(112);
-        X8_COMPRESSED_GOLD_PAN.setProcessingSpeed(10);
+        compressedGoldPan8.setCapacity(1000);
+        compressedGoldPan8.setEnergyConsumption(112);
+        compressedGoldPan8.setProcessingSpeed(10);
         
         
         /*
          * DUST WASHERS
          */
         
-        CompressedElectricDustWasher X4_COMPRESSED_DUST_WASHER = new CompressedElectricDustWasher(
+        CompressedElectricDustWasher compressedDustWasher4 = new CompressedElectricDustWasher(
         		category, 
-        		ITEM_X4_COMPRESSED_DUST_WASHER, 
+        		itemCompressedDustWasher4, 
         		RecipeType.ENHANCED_CRAFTING_TABLE, 
-        		RECIPE_X4_COMPRESSED_DUST_WASHER, 
+        		recipeCompressedDustWasher4, 
         		4);
         
-        CompressedElectricDustWasher X8_COMPRESSED_DUST_WASHER = new CompressedElectricDustWasher(
+        CompressedElectricDustWasher compressedDustWasher8 = new CompressedElectricDustWasher(
         		category, 
-        		ITEM_X8_COMPRESSED_DUST_WASHER, 
+        		itemCompressedDustWasher8, 
         		RecipeType.ENHANCED_CRAFTING_TABLE, 
-        		RECIPE_X8_COMPRESSED_DUST_WASHER, 
+        		recipeCompressedDustWasher8, 
         		8);
         
-        X4_COMPRESSED_DUST_WASHER.setCapacity(500);
-        X4_COMPRESSED_DUST_WASHER.setEnergyConsumption(120);
-        X4_COMPRESSED_DUST_WASHER.setProcessingSpeed(10);
+        compressedDustWasher4.setCapacity(500);
+        compressedDustWasher4.setEnergyConsumption(120);
+        compressedDustWasher4.setProcessingSpeed(10);
         
-        X8_COMPRESSED_DUST_WASHER.setCapacity(1000);
-        X8_COMPRESSED_DUST_WASHER.setEnergyConsumption(240);
-        X8_COMPRESSED_DUST_WASHER.setProcessingSpeed(10);
+        compressedDustWasher8.setCapacity(1000);
+        compressedDustWasher8.setEnergyConsumption(240);
+        compressedDustWasher8.setProcessingSpeed(10);
 
         
         /*
          * SMELTERIES
          */
         
-        CompressedElectricSmeltery X4_COMPRESSED_SMELTERY = new CompressedElectricSmeltery(
+        CompressedElectricSmeltery compressedSmeltery4 = new CompressedElectricSmeltery(
         		category, 
-        		ITEM_X4_COMPRESSED_SMELTERY, 
+        		itemCompressedSmeltery4, 
         		RecipeType.ENHANCED_CRAFTING_TABLE, 
-        		RECIPE_X4_COMPRESSED_SMELTERY, 
+        		recipeCompressedSmeltery4, 
         		4);
         
-        CompressedElectricSmeltery X8_COMPRESSED_SMELTERY = new CompressedElectricSmeltery(
+        CompressedElectricSmeltery compressedSmeltery8 = new CompressedElectricSmeltery(
         		category, 
-        		ITEM_X8_COMPRESSED_SMELTERY, 
+        		itemCompressedSmeltery8, 
         		RecipeType.ENHANCED_CRAFTING_TABLE, 
-        		RECIPE_X8_COMPRESSED_SMELTERY,
+        		recipeCompressedSmeltery8,
         		8);
         
-        X4_COMPRESSED_SMELTERY.setCapacity(500);
-        X4_COMPRESSED_SMELTERY.setEnergyConsumption(160);
-        X4_COMPRESSED_SMELTERY.setProcessingSpeed(3);
+        compressedSmeltery4.setCapacity(500);
+        compressedSmeltery4.setEnergyConsumption(160);
+        compressedSmeltery4.setProcessingSpeed(3);
         
-        X8_COMPRESSED_SMELTERY.setCapacity(1000);
-        X8_COMPRESSED_SMELTERY.setEnergyConsumption(320);
-        X8_COMPRESSED_SMELTERY.setProcessingSpeed(3);
+        compressedSmeltery8.setCapacity(1000);
+        compressedSmeltery8.setEnergyConsumption(320);
+        compressedSmeltery8.setProcessingSpeed(3);
         
         
         
         // Add the items to slimefun
-        ((SlimefunItem)X4_COMPRESSED_AUTO_DRIER).register(this);
-        ((SlimefunItem)X8_COMPRESSED_AUTO_DRIER).register(this);
+        ((SlimefunItem)compressedAutoDrier4).register(this);
+        ((SlimefunItem)compressedAutoDrier8).register(this);
         
-        ((SlimefunItem)X4_COMPRESSED_GOLD_PAN).register(this);
-        ((SlimefunItem)X8_COMPRESSED_GOLD_PAN).register(this);
+        ((SlimefunItem)compressedGoldPan4).register(this);
+        ((SlimefunItem)compressedGoldPan8).register(this);
         
-        ((SlimefunItem)X4_COMPRESSED_DUST_WASHER).register(this);
-        ((SlimefunItem)X8_COMPRESSED_DUST_WASHER).register(this);
+        ((SlimefunItem)compressedDustWasher4).register(this);
+        ((SlimefunItem)compressedDustWasher8).register(this);
         
-        ((SlimefunItem)X4_COMPRESSED_SMELTERY).register(this);
-        ((SlimefunItem)X8_COMPRESSED_SMELTERY).register(this);
+        ((SlimefunItem)compressedSmeltery4).register(this);
+        ((SlimefunItem)compressedSmeltery8).register(this);
         
         
         
@@ -390,38 +390,38 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         
         
         output = new SlimefunItemStack(SlimefunItems.AUTO_DRIER, 8);
-        input = new ItemStack[] { ITEM_X4_COMPRESSED_AUTO_DRIER, null, null, null, null, null, null, null, null };
+        input = new ItemStack[] { itemCompressedAutoDrier4, null, null, null, null, null, null, null, null };
         RecipeType.ENHANCED_CRAFTING_TABLE.register(input, output);
         
         output = new SlimefunItemStack(SlimefunItems.AUTO_DRIER, 8);
-        input = new ItemStack[] { ITEM_X8_COMPRESSED_AUTO_DRIER, null, null, null, null, null, null, null, null };
+        input = new ItemStack[] { itemCompressedAutoDrier8, null, null, null, null, null, null, null, null };
         RecipeType.ENHANCED_CRAFTING_TABLE.register(input, output);
         
         
         output = new SlimefunItemStack(SlimefunItems.ELECTRIC_DUST_WASHER_3, 8);
-        input = new ItemStack[] { ITEM_X4_COMPRESSED_DUST_WASHER, null, null, null, null, null, null, null, null };
+        input = new ItemStack[] { itemCompressedDustWasher4, null, null, null, null, null, null, null, null };
         RecipeType.ENHANCED_CRAFTING_TABLE.register(input, output);
         
         output = new SlimefunItemStack(SlimefunItems.ELECTRIC_DUST_WASHER_3, 8);
-        input = new ItemStack[] { ITEM_X8_COMPRESSED_DUST_WASHER, null, null, null, null, null, null, null, null };
+        input = new ItemStack[] { itemCompressedDustWasher8, null, null, null, null, null, null, null, null };
         RecipeType.ENHANCED_CRAFTING_TABLE.register(input, output);
         
         
         output = new SlimefunItemStack(SlimefunItems.ELECTRIC_GOLD_PAN_3, 8);
-        input = new ItemStack[] { ITEM_X4_COMPRESSED_GOLD_PAN, null, null, null, null, null, null, null, null };
+        input = new ItemStack[] { itemCompressedGoldPan4, null, null, null, null, null, null, null, null };
         RecipeType.ENHANCED_CRAFTING_TABLE.register(input, output);
         
         output = new SlimefunItemStack(SlimefunItems.ELECTRIC_GOLD_PAN_3, 8);
-        input = new ItemStack[] { ITEM_X8_COMPRESSED_GOLD_PAN, null, null, null, null, null, null, null, null };
+        input = new ItemStack[] { itemCompressedGoldPan8, null, null, null, null, null, null, null, null };
         RecipeType.ENHANCED_CRAFTING_TABLE.register(input, output);
         
         
         output = new SlimefunItemStack(SlimefunItems.ELECTRIC_SMELTERY_2, 8);
-        input = new ItemStack[] { ITEM_X4_COMPRESSED_SMELTERY, null, null, null, null, null, null, null, null };
+        input = new ItemStack[] { itemCompressedSmeltery4, null, null, null, null, null, null, null, null };
         RecipeType.ENHANCED_CRAFTING_TABLE.register(input, output);
         
         output = new SlimefunItemStack(SlimefunItems.ELECTRIC_SMELTERY_2, 8);
-        input = new ItemStack[] { ITEM_X8_COMPRESSED_SMELTERY, null, null, null, null, null, null, null, null };
+        input = new ItemStack[] { itemCompressedSmeltery8, null, null, null, null, null, null, null, null };
         RecipeType.ENHANCED_CRAFTING_TABLE.register(input, output);
     }
 
