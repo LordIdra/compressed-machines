@@ -43,7 +43,7 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         
         // Display an arbitrary item to tell the players that they can deconstruct machines in an enhanced crafting table
         SlimefunItemStack compressedInformationItem = new SlimefunItemStack(
-        		"compressedInformationItem",
+        		"COMPRESSED_INFORMATION_ITEM",
         		Material.NETHER_STAR,
         		"&4&lINFORMATION",
         		"&aCompressed machines can be converted back into their", "&anormal variants by putting them in the &2&lfirst slot &aof an", "&aenhanced crafting table");
