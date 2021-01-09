@@ -1,4 +1,4 @@
-package slimefun_machines;
+package slimefunmachines;
 
 
 import java.util.HashMap;
@@ -50,9 +50,9 @@ public class CompressedElectricSmeltery extends ElectricSmeltery {
         	ItemStack[] outputs = recipe.getOutput().clone();
         	
         	for (int i = 0; i < outputs.length; i++) {
-        		ItemStack current_output = new ItemStack(outputs[i]);
-        		current_output.setAmount(current_output.getAmount() * 4);
-        		outputs[i] = current_output;
+        		ItemStack currentOutput = new ItemStack(outputs[i]);
+        		currentOutput.setAmount(currentOutput.getAmount() * 4);
+        		outputs[i] = currentOutput;
         	}
         	
         	recipe = new MachineRecipe(recipe.getTicks(), recipe.getInput(), outputs);

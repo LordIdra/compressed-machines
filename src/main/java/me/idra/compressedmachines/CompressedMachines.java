@@ -15,12 +15,12 @@ import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-import misc_items.InformationItem;
-import slimefun_machines.CompressedX4AutoDrier;
-import slimefun_machines.CompressedX8AutoDrier;
-import slimefun_machines.CompressedElectricDustWasher;
-import slimefun_machines.CompressedElectricGoldPan;
-import slimefun_machines.CompressedElectricSmeltery;
+import other.InformationItem;
+import slimefunmachines.CompressedElectricDustWasher;
+import slimefunmachines.CompressedElectricGoldPan;
+import slimefunmachines.CompressedElectricSmeltery;
+import slimefunmachines.CompressedX4AutoDrier;
+import slimefunmachines.CompressedX8AutoDrier;
 
 
 
@@ -30,7 +30,8 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
     	
         // Read the config file
-        Config cfg = new Config(this);
+        @SuppressWarnings("unused")
+		Config cfg = new Config(this);
 
     	
         // Create a category to put our items into
@@ -63,7 +64,8 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         
         // Load the SF items we're going to compress
         
-        /* TODO MACHINES 
+        /* 
+         * MACHINES TO BE ADDED
          * 
          * CARBON_PRESS_3
          * ELECTRIC_FURNACE_3

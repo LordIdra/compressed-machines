@@ -1,6 +1,4 @@
-package slimefun_machines;
-
-
+package other;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +6,7 @@ import java.util.List;
 import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.inventory.ItemStack;
+
 
 import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
@@ -17,13 +16,12 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 
-
-public class CompressedX4AutoDrier extends AContainer implements RecipeDisplayItem {
+public class CompressedAutoDrierBase extends AContainer implements RecipeDisplayItem {
 	
-	private final int compression = 4;
+	protected static final int compression = 1;
     private List<ItemStack> recipeList;
 
-    public CompressedX4AutoDrier(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public CompressedAutoDrierBase(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(category, item, recipeType, recipe);
     }
 
@@ -83,9 +81,9 @@ public class CompressedX4AutoDrier extends AContainer implements RecipeDisplayIt
         }
         
         for (int i = 0; i < recipeList.size(); i++) {
-        	ItemStack newRecipe = new ItemStack(recipeList.get(i));
-        	newRecipe.setAmount(newRecipe.getAmount() * compression);
-        	recipeList.set(i, newRecipe);
+        	ItemStack new_recipe = new ItemStack(recipeList.get(i));
+        	new_recipe.setAmount(new_recipe.getAmount() * compression);
+        	recipeList.set(i, new_recipe);
         }
 
         // Now convert them to machine recipes

@@ -1,4 +1,4 @@
-package misc_items;
+package other;
 
 import org.bukkit.inventory.ItemStack;
 

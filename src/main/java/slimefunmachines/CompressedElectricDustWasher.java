@@ -1,4 +1,4 @@
-package slimefun_machines;
+package slimefunmachines;
 
 import java.util.ArrayList;
 import java.util.List;
