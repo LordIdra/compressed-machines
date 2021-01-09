@@ -1,9 +1,10 @@
 package slimefun_machines;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.inventory.ItemStack;
@@ -15,8 +16,11 @@ import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
-public class CompressedX4AutoDrier extends AContainer implements RecipeDisplayItem {
 
+
+public class CompressedX4AutoDrier extends AContainer implements RecipeDisplayItem {
+	
+	private final int compression = 4;
     private List<ItemStack> recipeList;
 
     public CompressedX4AutoDrier(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -79,9 +83,9 @@ public class CompressedX4AutoDrier extends AContainer implements RecipeDisplayIt
         }
         
         for (int i = 0; i < recipeList.size(); i++) {
-        	ItemStack new_recipe = new ItemStack(recipeList.get(i));
-        	new_recipe.setAmount(new_recipe.getAmount() * 4);
-        	recipeList.set(i, new_recipe);
+        	ItemStack newRecipe = new ItemStack(recipeList.get(i));
+        	newRecipe.setAmount(newRecipe.getAmount() * compression);
+        	recipeList.set(i, newRecipe);
         }
 
         // Now convert them to machine recipes
@@ -106,6 +110,6 @@ public class CompressedX4AutoDrier extends AContainer implements RecipeDisplayIt
     }
     
     public int getCompression() {
-    	return 4;
+    	return compression;
     }
 }

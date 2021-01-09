@@ -40,9 +40,9 @@ public class CompressedElectricGoldPan extends AContainer implements RecipeDispl
         recipes.addAll(netherGoldPan.getDisplayRecipes());
         
         for (int i = 0; i < recipes.size(); i++) {
-        	ItemStack current_recipe = recipes.get(i).clone();
-        	current_recipe.setAmount(current_recipe.getAmount() * compression);
-        	recipes.set(i, current_recipe);
+        	ItemStack currentRecipe = recipes.get(i).clone();
+        	currentRecipe.setAmount(currentRecipe.getAmount() * compression);
+        	recipes.set(i, currentRecipe);
         }
 
         return recipes;
@@ -77,17 +77,14 @@ public class CompressedElectricGoldPan extends AContainer implements RecipeDispl
 	                }
             	}
                 
-            } else if (SlimefunUtils.isItemSimilar(menu.getItemInSlot(slot), new ItemStack(Material.SOUL_SAND), true, false)) {
-            	if (menu.getItemInSlot(slot).getAmount() >= compression) {
-            		
-	                ItemStack output = netherGoldPan.getRandomOutput().clone();
-	                output.setAmount(compression);
-	                MachineRecipe recipe = new MachineRecipe(4 / getSpeed(), new ItemStack[0], new ItemStack[] { output });
+            } else if (SlimefunUtils.isItemSimilar(menu.getItemInSlot(slot), new ItemStack(Material.SOUL_SAND), true, false) && (menu.getItemInSlot(slot).getAmount() >= compression)) {
+	            ItemStack output = netherGoldPan.getRandomOutput().clone();
+	            output.setAmount(compression);
+	            MachineRecipe recipe = new MachineRecipe(4 / getSpeed(), new ItemStack[0], new ItemStack[] { output });
 	
-	                if (output.getType() != Material.AIR && menu.fits(output, getOutputSlots())) {
-	                    menu.consumeItem(slot, compression);
-	                    return recipe;
-	                }
+	            if (output.getType() != Material.AIR && menu.fits(output, getOutputSlots())) {
+	                menu.consumeItem(slot, compression);
+	                return recipe;
             	}
             }
         }
@@ -98,9 +95,9 @@ public class CompressedElectricGoldPan extends AContainer implements RecipeDispl
     
     private boolean hasFreeSlot(BlockMenu menu) {
         for (int slot : getOutputSlots()) {
-        	ItemStack item_in_slot = menu.getItemInSlot(slot);
+        	ItemStack itemInSlot = menu.getItemInSlot(slot);
         	
-            if (item_in_slot == null) {
+            if (itemInSlot == null) {
                 return true;
             }
         }

@@ -47,9 +47,9 @@ public class CompressedElectricDustWasher extends AContainer {
         recipes.addAll(oreWasher.getDisplayRecipes());
         
         for (int i = 0; i < recipes.size(); i++) {
-        	ItemStack current_recipe = recipes.get(i).clone();
-        	current_recipe.setAmount(current_recipe.getAmount() * compression);
-        	recipes.set(i, current_recipe);
+        	ItemStack currentRecipe = recipes.get(i).clone();
+        	currentRecipe.setAmount(currentRecipe.getAmount() * compression);
+        	recipes.set(i, currentRecipe);
         }
 
         return recipes;
@@ -78,17 +78,15 @@ public class CompressedElectricDustWasher extends AContainer {
 	                    return recipe;
 	                }
                 }
-            } else if (SlimefunUtils.isItemSimilar(menu.getItemInSlot(slot), SlimefunItems.PULVERIZED_ORE, true)) {
-            	if (menu.getItemInSlot(slot).getAmount() >= compression) {
+            } else if (SlimefunUtils.isItemSimilar(menu.getItemInSlot(slot), SlimefunItems.PULVERIZED_ORE, true) && (menu.getItemInSlot(slot).getAmount() >= compression)) {
             		
-            		ItemStack oreCluster = SlimefunItems.PURE_ORE_CLUSTER.clone();
-            		oreCluster.setAmount(compression);
-	                MachineRecipe recipe = new MachineRecipe(4 / getSpeed(), new ItemStack[0], new ItemStack[] { oreCluster });
+            	ItemStack oreCluster = SlimefunItems.PURE_ORE_CLUSTER.clone();
+            	oreCluster.setAmount(compression);
+	            MachineRecipe recipe = new MachineRecipe(4 / getSpeed(), new ItemStack[0], new ItemStack[] { oreCluster });
 	
-	                if (menu.fits(recipe.getOutput()[0], getOutputSlots())) {
-	                    menu.consumeItem(slot, compression);
-	                    return recipe;
-	                }
+	            if (menu.fits(recipe.getOutput()[0], getOutputSlots())) {
+	                menu.consumeItem(slot, compression);
+	                return recipe;
             	}
             }
         }

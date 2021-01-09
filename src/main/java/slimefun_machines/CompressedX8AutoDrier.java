@@ -16,7 +16,8 @@ import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 
 public class CompressedX8AutoDrier extends AContainer implements RecipeDisplayItem {
-
+	
+	private final int compression = 8;
     private List<ItemStack> recipeList;
 
     public CompressedX8AutoDrier(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
@@ -80,7 +81,7 @@ public class CompressedX8AutoDrier extends AContainer implements RecipeDisplayIt
         
         for (int i = 0; i < recipeList.size(); i++) {
         	ItemStack new_recipe = new ItemStack(recipeList.get(i));
-        	new_recipe.setAmount(new_recipe.getAmount() * 8);
+        	new_recipe.setAmount(new_recipe.getAmount() * compression);
         	recipeList.set(i, new_recipe);
         }
 
@@ -106,6 +107,6 @@ public class CompressedX8AutoDrier extends AContainer implements RecipeDisplayIt
     }
     
     public int getCompression() {
-    	return 8;
+    	return compression;
     }
 }

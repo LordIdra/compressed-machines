@@ -12,7 +12,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
@@ -63,26 +62,28 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         
         
         // Load the SF items we're going to compress
+        
+        /* TODO MACHINES 
+         * 
+         * CARBON_PRESS_3
+         * ELECTRIC_FURNACE_3
+         * ELECTRIC_INGOT_FACTORY_3
+         * ELECTRIC_INGOT_PULVERIZER
+         * ELECTRIC_ORE_GRINDER_2
+         * ELECTRIC_PRESS_2
+         * ELECTRIFIED_CRUCIBLE_3
+         * FOOD_COMPOSTER_2
+         * FOOD_FABRICATOR_2
+         * GEO_MINER
+         * HEATED_PRESSURE_CHAMBER_2
+         * OIL_PUMP
+         * REFINERY
+         */
+        
         ItemStack autoDrier = SlimefunItems.AUTO_DRIER;
-        ItemStack carbonPress = SlimefunItems.CARBON_PRESS_3;
         ItemStack dustWasher = SlimefunItems.ELECTRIC_DUST_WASHER_3;
-        ItemStack furnace = SlimefunItems.ELECTRIC_FURNACE_3;
         ItemStack goldPan = SlimefunItems.ELECTRIC_GOLD_PAN_3;
-        ItemStack ingotFactory = SlimefunItems.ELECTRIC_INGOT_FACTORY_3;
-        ItemStack ingotPulverizer = SlimefunItems.ELECTRIC_INGOT_PULVERIZER;
-        ItemStack oreGrinder = SlimefunItems.ELECTRIC_ORE_GRINDER_2;
-        ItemStack press = SlimefunItems.ELECTRIC_PRESS_2;
         ItemStack smeltery = SlimefunItems.ELECTRIC_SMELTERY_2;
-        ItemStack crucible = SlimefunItems.ELECTRIFIED_CRUCIBLE_3;
-        ItemStack foodComposter = SlimefunItems.FOOD_COMPOSTER_2;
-        ItemStack foodFabricator = SlimefunItems.FOOD_FABRICATOR_2;
-        ItemStack geoMiner = SlimefunItems.GEO_MINER;
-        ItemStack heatedPressureChamber = SlimefunItems.HEATED_PRESSURE_CHAMBER_2;
-        ItemStack oilPump = SlimefunItems.OIL_PUMP;
-        ItemStack refinery = SlimefunItems.REFINERY;
-
-        
-        
         
         
         
