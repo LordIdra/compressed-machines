@@ -61,23 +61,25 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         String categoryName = "&5Compressed Machine";
         
         
-        // Display an arbitrary item to tell the players that they can deconstruct machines in an enhanced crafting table
+        // Display an arbitrary item to tell players about the plugin
         SlimefunItemStack compressedInformationItem = new SlimefunItemStack(
         		"COMPRESSED_INFORMATION_ITEM",
         		Material.NETHER_STAR,
         		"&4&lINFORMATION",
-        		"&aCompressed machines can be converted back into their", "&anormal variants by putting them in the &2&lfirst slot &aof an", "&aenhanced crafting table");
-        ItemStack[] compressedInformationRecipe = { 
-        		null, null, null,
-        		null, null, null,
-        		null, null, null
-        };
+        		"&aCompressed machines act the same as normal machines, but can",
+        		"&aprocess up to 64 items at a time. If you have lots of normal",
+        		"&amachines, convert them into compressed machines to save",
+        		"&aspace and help reduce server lag.",
+        		"",
+        		"&aCompressed machines can be converted back into their", 
+        		"&anormal variants by putting them in the &2&lfirst slot &aof an", 
+        		"&aenhanced crafting table");
         
         InformationItem compressedInformation = new InformationItem(
         		category, 
         		compressedInformationItem,
         		RecipeType.NULL, 
-        		compressedInformationRecipe);
+        		new ItemStack[] {null, null, null, null, null, null, null, null, null});
         
         compressedInformation.register(this);
         
@@ -235,13 +237,10 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         
         int[] compression_levels = new int[] { 4, 8 };
         
-        for (int level : compression_levels) {
-        	
-        	new autoDrierInformationClass				(level);
-        	new electricGoldPanInformationClass			(level);
-        	new electricDustWasherInformationClass		(level);
-        	new electricSmelteryInformationClass		(level);
-        }
+        for (int level : compression_levels) new autoDrierInformationClass				(level);
+        for (int level : compression_levels) new electricGoldPanInformationClass		(level);
+        for (int level : compression_levels) new electricDustWasherInformationClass		(level);
+        for (int level : compression_levels) new electricSmelteryInformationClass		(level);
     }
     
     
