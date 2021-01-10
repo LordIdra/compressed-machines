@@ -10,6 +10,9 @@ import io.github.thebusybiscuit.cscorelib2.inventory.InvUtils;
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.ElectricSmeltery;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import io.github.thebusybiscuit.slimefun4.utils.itemstack.ItemStackWrapper;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
+
+import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
@@ -24,6 +27,8 @@ import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 public class CompressedElectricSmeltery extends ElectricSmeltery {
 
     private int compression;
+    private Config cfg = SlimefunPlugin.getCfg();
+    private int TICK_SPEED = 20 / cfg.getInt("URID.custom-ticker-delay");
     
     public CompressedElectricSmeltery(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, int compressionLevel) {
 		super(category, item, recipeType, recipe);
@@ -51,11 +56,13 @@ public class CompressedElectricSmeltery extends ElectricSmeltery {
         	
         	for (int i = 0; i < outputs.length; i++) {
         		ItemStack currentOutput = new ItemStack(outputs[i]);
-        		currentOutput.setAmount(currentOutput.getAmount() * 4);
+        		currentOutput.setAmount(currentOutput.getAmount() * compression);
         		outputs[i] = currentOutput;
         	}
         	
-        	recipe = new MachineRecipe(recipe.getTicks(), recipe.getInput(), outputs);
+        	
+        	
+        	recipe = new MachineRecipe(recipe.getTicks() / TICK_SPEED, recipe.getInput(), outputs);
         	
             for (ItemStack input : recipe.getInput()) {
                 for (int slot : getInputSlots()) {
