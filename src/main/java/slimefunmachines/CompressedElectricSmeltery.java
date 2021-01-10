@@ -4,6 +4,7 @@ package slimefunmachines;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 
 import io.github.thebusybiscuit.cscorelib2.inventory.InvUtils;
@@ -61,14 +62,15 @@ public class CompressedElectricSmeltery extends ElectricSmeltery {
         	}
         	
         	
-        	
         	recipe = new MachineRecipe(recipe.getTicks() / tickSpeed, recipe.getInput(), outputs);
         	
             for (ItemStack input : recipe.getInput()) {
                 for (int slot : getInputSlots()) {
                     if (SlimefunUtils.isItemSimilar(inventory.get(slot), input, true)) {
-                        found.put(slot, input.getAmount());
-                        break;
+                    	if (inventory.get(slot).getAmount() >= input.getAmount() * compression) {
+                    		found.put(slot, input.getAmount());
+                    		break;
+                    	}
                     }
                 }
             }

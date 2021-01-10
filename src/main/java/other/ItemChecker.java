@@ -3,12 +3,13 @@ package other;
 import org.bukkit.inventory.ItemStack;
 
 public class ItemChecker {
-	
+	private ItemChecker() {
+		throw new IllegalStateException("Utility class");
+	}
+	  
 	public static boolean isItemLegal(ItemStack item) {
 		
-		if (item.getAmount() > item.getMaxStackSize()) return false;
-		
-		return true;
+		return (item.getAmount() <= item.getMaxStackSize());
 	}
 	
 	public static boolean isRecipeLegal(ItemStack[] inputs, ItemStack[] outputs) {

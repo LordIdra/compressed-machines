@@ -29,22 +29,19 @@ import slimefunmachines.CompressedElectricSmeltery;
 
 public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
 
-    SlimefunItemStack[] getRecipe(int compression, SlimefunItemStack item) {
-    	
-    	if (compression == 2) {
-    		return new SlimefunItemStack[] {item, item, null, null, null, null, null, null, null};
-    	}
-    	
-    	else if (compression == 4) {
-    		return new SlimefunItemStack[] {item, item, null, item, item, null, null, null, null};
-    	}
-    	
-    	else if (compression == 8) {
-    		return new SlimefunItemStack[] {item, item, item, item, null, item, item, item, item};
-    	}
-    	
-    	return new SlimefunItemStack[] {item, null, null, null, null, null, null, null, null};
+	
+	
+    SlimefunItemStack[] getRecipe(int compression, SlimefunItemStack item) {    	
+    	return new SlimefunItemStack[] {item, item, null, null, null, null, null, null, null};
     }
+    
+    
+    
+    public String getCompressionPrefix(int compression) {
+    	return "&7&l[&2&l" + compression + "x&7&l] ";
+    }
+    
+    
     
     @Override
     public void onEnable() {
@@ -76,9 +73,9 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         		"&aenhanced crafting table");
         
         InformationItem compressedInformation = new InformationItem(
-        		category, 
+        		category,
         		compressedInformationItem,
-        		RecipeType.NULL, 
+        		RecipeType.NULL,
         		new ItemStack[] {null, null, null, null, null, null, null, null, null});
         
         compressedInformation.register(this);
@@ -114,9 +111,9 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          *  MACHINE INFORMATION STRUCTURES
          */
         
-        class machineInformation {
+        class MachineInformation {
         	
-        	machineInformation(int compressionLevel) {
+        	MachineInformation(int compressionLevel) {
         		compression = compressionLevel;
         	}
         	
@@ -131,15 +128,15 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
         	
         	int compression = 1;
         	
-        	String 				ID;
+        	String 				id;
         	Material 			material;
         	int 				speed;
         	int 				power;
         	int					buffer;
         	String				name;
         	String[] 			lore;
-        	SlimefunItemStack 	basetype;
         	
+        	SlimefunItemStack	basetype;
         	SlimefunItemStack[]	recipe;
         	SlimefunItemStack	item;
         }
@@ -151,96 +148,116 @@ public class CompressedMachines extends JavaPlugin implements SlimefunAddon {
          */
         
         // AUTO DRIER
-        class autoDrierInformationClass extends machineInformation {
-	        autoDrierInformationClass(int compressionLevel) { 
+        class AutoDrierInformationClass extends MachineInformation {
+	        AutoDrierInformationClass(int compressionLevel, SlimefunItemStack basetype) { 
 	        	super(compressionLevel);
 	        	
-	        	ID 			= "COMPRESSED_ELECTRIC_AUTO_DRIER_" + compression;
+	        	id 			= "COMPRESSED_ELECTRIC_AUTO_DRIER_" + compression;
 	        	material 	= Material.SMOKER;
 	        	speed 		= 1;
 	        	power 		= 12 * compression;
-	        	name 		= "&7&l[&2&l" + String.valueOf(compression) + "x&7&l] &r&6Auto Drier";
-	        	basetype	= autoDrier;
+	        	name 		= getCompressionPrefix(compression) + "&r&6Auto Drier";
 	        	lore		= new String[] {"", categoryName, LoreBuilder.speed(speed), LoreBuilder.powerPerSecond(power)};
 	        	
 	        	buffer		= power * 10 * compression;
 	        	recipe		= getRecipe					(compression, basetype);
-	        	item		= new SlimefunItemStack		(ID, material, name, lore);
+	        	item		= new SlimefunItemStack		(id, material, name, lore);
 	        	
 	        	register(new CompressedAutoDrier (category, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe, compression));
+	        	
+	        	this.basetype = item;
 	        }
         }
         
         // ELECTRIC DUST WASHER
-        class electricDustWasherInformationClass extends machineInformation {
-	        electricDustWasherInformationClass(int compressionLevel) { 
+        class ElectricDustWasherInformationClass extends MachineInformation {
+	        ElectricDustWasherInformationClass(int compressionLevel, SlimefunItemStack basetype) { 
 	        	super(compressionLevel);
 	        	
-	        	ID 			= "COMPRESSED_ELECTRIC_DUST_WASHER" + compression;
+	        	id 			= "COMPRESSED_ELECTRIC_DUST_WASHER" + compression;
 	        	material 	= Material.BLUE_STAINED_GLASS;
 	        	speed 		= 10;
 	        	power 		= 30 * compression;
-	        	basetype	= dustWasher;
-	        	name 		= "&7&l[&2&l" + String.valueOf(compression) + "x&7&l] &r&9Electric Dust Washer &7(&eIII&7)";
+	        	name 		= getCompressionPrefix(compression) + "&r&9Electric Dust Washer &7(&eIII&7)";
 	        	lore		= new String[] {"", categoryName, LoreBuilder.speed(speed), LoreBuilder.powerPerSecond(power)};
 	        	
 	        	buffer		= power * 10 * compression;
 	        	recipe		= getRecipe					(compression, basetype);
-	        	item		= new SlimefunItemStack		(ID, material, name, lore);
+	        	item		= new SlimefunItemStack		(id, material, name, lore);
 	        	
 	        	register(new CompressedElectricDustWasher (category, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe, compression));
+	        	
+	        	this.basetype = item;
 	        }
         }
         
         // ELECTRIC GOLD PAN
-        class electricGoldPanInformationClass extends machineInformation {
-	        electricGoldPanInformationClass(int compressionLevel) { 
+        class ElectricGoldPanInformationClass extends MachineInformation {
+	        ElectricGoldPanInformationClass(int compressionLevel, SlimefunItemStack basetype) { 
 	        	super(compressionLevel);
 	        	
-	        	ID 			= "COMPRESSED_ELECTRIC_GOLD_PAN_" + compression;
+	        	id 			= "COMPRESSED_ELECTRIC_GOLD_PAN_" + compression;
 	        	material 	= Material.BROWN_TERRACOTTA;
 	        	speed 		= 10;
 	        	power 		= 14 * compression;
-	        	basetype	= goldPan;
-	        	name 		= "&7&l[&2&l" + String.valueOf(compression) + "x&7&l] &r&6Electric Gold Pan &7(&eIII&7)";
+	        	name 		= getCompressionPrefix(compression) + "&r&6Electric Gold Pan &7(&eIII&7)";
 	        	lore		= new String[] {"", categoryName, LoreBuilder.speed(speed), LoreBuilder.powerPerSecond(power)};
 	        	
 	        	buffer		= power * 10 * compression;
 	        	recipe		= getRecipe					(compression, basetype);
-	        	item		= new SlimefunItemStack		(ID, material, name, lore);
+	        	item		= new SlimefunItemStack		(id, material, name, lore);
 	        	
 	        	register(new CompressedElectricGoldPan (category, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe, compression));
+	        	
+	        	this.basetype = item;
 	        }
         }
         
         // ELECTRIC SMELTERY
-        class electricSmelteryInformationClass extends machineInformation {
-	        electricSmelteryInformationClass(int compressionLevel) { 
+        class ElectricSmelteryInformationClass extends MachineInformation {
+	        ElectricSmelteryInformationClass(int compressionLevel, SlimefunItemStack basetype) { 
 	        	super(compressionLevel);
 	        	
-	        	ID 			= "COMPRESSED_ELECTRIC_SMELTERY_" + compression;
+	        	id 			= "COMPRESSED_ELECTRIC_SMELTERY_" + compression;
 	        	material 	= Material.FURNACE;
 	        	speed 		= 10;
 	        	power 		= 40 * compression;
-	        	basetype	= smeltery;
-	        	name 		= "&7&l[&2&l" + String.valueOf(compression) + "x&7&l] &r&cElectric Smeltery &7 - &eII";
+	        	name 		= getCompressionPrefix(compression) +"&r&cElectric Smeltery &7 - &eII";
 	        	lore		= new String[] {"", "&4Alloys only, doesn't smelt Dust into Ingots", "", categoryName, LoreBuilder.speed(speed), LoreBuilder.powerPerSecond(power)};
 	        	
 	        	buffer		= power * 10 * compression;
 	        	recipe		= getRecipe					(compression, basetype);
-	        	item		= new SlimefunItemStack		(ID, material, name, lore);
+	        	item		= new SlimefunItemStack		(id, material, name, lore);
 	        	
 	        	register(new CompressedElectricSmeltery (category, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe, compression));
+	        	
+	        	this.basetype = item;
 	        }
         }
         
         
-        int[] compression_levels = new int[] { 4, 8 };
+        int[] compression_levels = new int[] { 2, 4, 8, 16, 32, 64 };
+        SlimefunItemStack basetype;
         
-        for (int level : compression_levels) new autoDrierInformationClass				(level);
-        for (int level : compression_levels) new electricGoldPanInformationClass		(level);
-        for (int level : compression_levels) new electricDustWasherInformationClass		(level);
-        for (int level : compression_levels) new electricSmelteryInformationClass		(level);
+        basetype = autoDrier;
+        for (int level : compression_levels) {
+        	basetype = new AutoDrierInformationClass				(level, basetype).basetype;
+        }
+        
+        basetype = goldPan;
+        for (int level : compression_levels) {
+        	basetype = new ElectricGoldPanInformationClass			(level, basetype).basetype;
+        }
+        
+        basetype = dustWasher;
+        for (int level : compression_levels) {
+        	basetype = new ElectricDustWasherInformationClass		(level, basetype).basetype;
+        }
+        
+        basetype = smeltery;
+        for (int level : compression_levels) {
+        	basetype = new ElectricSmelteryInformationClass			(level, basetype).basetype;
+        }
     }
     
     
