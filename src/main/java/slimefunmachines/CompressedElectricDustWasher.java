@@ -1,7 +1,5 @@
 package slimefunmachines;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -37,22 +35,6 @@ public class CompressedElectricDustWasher extends AContainer {
         super.preRegister();
 
         oreWasher = (OreWasher) SlimefunItems.ORE_WASHER.getItem();
-    }
-
-    @Override
-    public List<ItemStack> getDisplayRecipes() {
-    	
-        List<ItemStack> recipes = new ArrayList<>();
-
-        recipes.addAll(oreWasher.getDisplayRecipes());
-        
-        for (int i = 0; i < recipes.size(); i++) {
-        	ItemStack currentRecipe = recipes.get(i).clone();
-        	currentRecipe.setAmount(currentRecipe.getAmount() * compression);
-        	recipes.set(i, currentRecipe);
-        }
-
-        return recipes;
     }
     
     @Override

@@ -28,7 +28,7 @@ public class CompressedElectricSmeltery extends ElectricSmeltery {
 
     private int compression;
     private Config cfg = SlimefunPlugin.getCfg();
-    private int TICK_SPEED = 20 / cfg.getInt("URID.custom-ticker-delay");
+    private int tickSpeed = 20 / cfg.getInt("URID.custom-ticker-delay");
     
     public CompressedElectricSmeltery(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, int compressionLevel) {
 		super(category, item, recipeType, recipe);
@@ -62,7 +62,7 @@ public class CompressedElectricSmeltery extends ElectricSmeltery {
         	
         	
         	
-        	recipe = new MachineRecipe(recipe.getTicks() / TICK_SPEED, recipe.getInput(), outputs);
+        	recipe = new MachineRecipe(recipe.getTicks() / tickSpeed, recipe.getInput(), outputs);
         	
             for (ItemStack input : recipe.getInput()) {
                 for (int slot : getInputSlots()) {
