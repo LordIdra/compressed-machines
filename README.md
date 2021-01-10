@@ -1,7 +1,7 @@
-# Compressed Machines (WIP)
+# Compressed Machines (IN DEVELOPMENT)
 _What does it do?_
 
-Compressed Machines is an addon for Slimefun that adds compressed variants of electric machines such as gold pans, smelteries and dust washers, that can process up to eight items at a time. This is my proposed solution to the enourmous amount of processing power that Slimefun cargo networks take to run; instead of having many nodes connected to many machines that process one item at a time, you now only need to have a few machines that process multiple items.
+Compressed Machines is an addon for Slimefun that adds compressed variants of electric machines such as gold pans, smelteries and dust washers, that can process up to a stack of items at a time. This is my proposed solution to the enourmous amount of processing power that Slimefun cargo networks take to run; instead of having many nodes connected to many machines that process one item at a time, you now only need to have a few machines that process multiple items.
 
 
 _How does it work?_
