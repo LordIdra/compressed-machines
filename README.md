@@ -8,4 +8,4 @@ _How does it work?_
 
 Compressed machines can be crafted in an Enhanced Crafting Table using either four or eight instances of the original machine - for example, eight `Gold Pan III`s would be needed to create an `8x Compressed Gold Pan`. The compressed variants can be crafted back into normal machines by placing them in the first slot of an Enhanced Crafting Table.
 
-**I am new to java, this is my first plugin, and I have by no means done extensive testing. Use at your own risk.** I will compile releases once I'm sure that the plugin won't break anything and a more stable version is available. 
+**I am new to java, this is my first plugin, and I have by no means done extensive testing. Use at your own risk.**
