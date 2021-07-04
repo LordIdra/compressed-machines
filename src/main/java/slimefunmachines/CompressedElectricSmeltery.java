@@ -9,7 +9,6 @@ import org.bukkit.inventory.ItemStack;
 import io.github.thebusybiscuit.cscorelib2.inventory.InvUtils;
 import io.github.thebusybiscuit.slimefun4.implementation.items.electric.machines.ElectricSmeltery;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-import io.github.thebusybiscuit.slimefun4.utils.itemstack.ItemStackWrapper;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 
 import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
@@ -44,7 +43,7 @@ public class CompressedElectricSmeltery extends ElectricSmeltery {
             ItemStack item = inv.getItemInSlot(slot);
 
             if (item != null) {
-                inventory.put(slot, new ItemStackWrapper(item));
+                inventory.put(slot, item);
             }
         }
 
