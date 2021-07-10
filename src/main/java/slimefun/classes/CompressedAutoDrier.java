@@ -1,4 +1,4 @@
-package slimefunmachines;
+package slimefun.classes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +18,6 @@ import other.ItemChecker;
 public class CompressedAutoDrier extends AutoDrier {
 	
 	private int compression = 1;
-    private Config cfg = SlimefunPlugin.getCfg();
-    private int tickSpeed = 20 / cfg.getInt("URID.custom-ticker-delay");
 
     public CompressedAutoDrier(Category category, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, int compressionLevel) {
         super(category, item, recipeType, recipe);
@@ -28,8 +26,13 @@ public class CompressedAutoDrier extends AutoDrier {
         compressRecipes();
     }
     
-    public CompressedAutoDrier compressRecipes() {
+    
+    
+    public void compressRecipes() {
     	
+        Config cfg = SlimefunPlugin.getCfg();
+        int tickSpeed = 20 / cfg.getInt("URID.custom-ticker-delay");
+        
     	for (int n = 0; n < recipes.size(); n++) {
     		
     		MachineRecipe recipe = recipes.get(n);
@@ -51,9 +54,9 @@ public class CompressedAutoDrier extends AutoDrier {
     		
     		recipes.set(n, new MachineRecipe(recipe.getTicks() / tickSpeed, recipeInput, recipeOutput));
     	}
-    	
-    	return this;
     }
+    
+    
     
     @Override
     public List<ItemStack> getDisplayRecipes() {
@@ -75,6 +78,8 @@ public class CompressedAutoDrier extends AutoDrier {
 
         return displayRecipes;
     }
+    
+    
     
     public int getCompression() {
     	return compression;

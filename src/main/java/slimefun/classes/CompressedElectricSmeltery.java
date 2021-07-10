@@ -1,4 +1,4 @@
-package slimefunmachines;
+package slimefun.classes;
 
 
 import java.util.HashMap;

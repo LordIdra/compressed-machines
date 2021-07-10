@@ -1,4 +1,4 @@
-package slimefunmachines;
+package slimefun.classes;
 
 
 import org.bukkit.Material;
